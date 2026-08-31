@@ -1,0 +1,11 @@
+[ZEROSPACE] Starting process: D:\ZeroSpace\tools\c_mock_tool_1788154206\src\main.exe
+[ZEROSPACE] Sandboxed USERPROFILE: D:\ZeroSpace\containers\c_mock_tool_1788154206\sandbox\home
+
+==========================================
+      ZEROSPACE C SANDBOX TEST UTILITY   
+==========================================
+USERPROFILE: D:\ZeroSpace\containers\c_mock_tool_1788154206\sandbox\home
+TEMP: D:\ZeroSpace\containers\c_mock_tool_1788154206\sandbox\temp
+PATH: B:\MinGW\bin;C:/Users/VICTUS/.gemini/antigravity-ide/bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\MinGW\bin;C:\ProgramData\chocolatey\bin;c:\Users\VICTUS\AppData\Local\Programs\cursor\resources\app\bin;B:\MinGW\bin;C:\Users\VICTUS\.cargo\bin;C:\Users\VICTUS\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk-23\bin;D:\Antigravity IDE\bin;B:\Microsoft VS Code\bin;C:\Users\VICTUS\AppData\Local\Programs\Antigravity IDE\bin
+
+[SUCCESS] Environment folders isolated inside ZeroSpace containers!

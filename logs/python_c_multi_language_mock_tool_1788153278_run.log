@@ -1,0 +1,13 @@
+[ZEROSPACE] Starting process: B:\ZeroSpace\containers\python_c_multi_language_mock_tool_1788153278\venv\Scripts\python.exe B:\ZeroSpace\tools\python_c_multi_language_mock_tool_1788153278\src\main.py
+[ZEROSPACE] Sandboxed USERPROFILE: B:\ZeroSpace\containers\python_c_multi_language_mock_tool_1788153278\sandbox\home
+
+==========================================
+      ZEROSPACE MULTI-LANGUAGE TEST      
+==========================================
+Current Python Interpreter: B:\ZeroSpace\containers\python_c_multi_language_mock_tool_1788153278\venv\Scripts\python.exe
+Successfully imported requests library: 2.31.0
+Calling C helper at: B:\ZeroSpace\tools\python_c_multi_language_mock_tool_1788153278\src\helper.exe
+[C HELPER] Hello from compiled C helper!
+
+
+[SUCCESS] Environment folders isolated inside ZeroSpace containers!

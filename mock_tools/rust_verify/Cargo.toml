@@ -1,0 +1,9 @@
+[package]
+name = "rust_verify"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# We can include a tiny dependency just to verify cargo builds and fetches dependencies
+# Let's use 'hex' library as it compiles fast and has no native dependencies
+hex = "0.4.3"

@@ -1,0 +1,12 @@
+[ZEROSPACE] Starting process: B:\ZeroSpace\containers\rust_mock_tool_1788153267\target\release\rust_verify.exe
+[ZEROSPACE] Sandboxed USERPROFILE: B:\ZeroSpace\containers\rust_mock_tool_1788153267\sandbox\home
+
+==========================================
+      ZEROSPACE RUST SANDBOX TEST UTILITY 
+==========================================
+Hex library check: 'ZeroSpace' -> 5a65726f5370616365
+USERPROFILE: B:\ZeroSpace\containers\rust_mock_tool_1788153267\sandbox\home
+TEMP: B:\ZeroSpace\containers\rust_mock_tool_1788153267\sandbox\temp
+PATH: C:\Users\VICTUS\.cargo\bin;C:\Users\VICTUS\.cargo\bin;B:\ZeroSpace\containers\rust_mock_tool_1788153267\target\release;B:\ZeroSpace\containers\rust_mock_tool_1788153267\target\debug;C:/Users/VICTUS/.gemini/antigravity-ide/bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\MinGW\bin;C:\ProgramData\chocolatey\bin;c:\Users\VICTUS\AppData\Local\Programs\cursor\resources\app\bin;B:\MinGW\bin;C:\Users\VICTUS\.cargo\bin;C:\Users\VICTUS\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk-23\bin;D:\Antigravity IDE\bin;B:\Microsoft VS Code\bin;C:\Users\VICTUS\AppData\Local\Programs\Antigravity IDE\bin
+
+[SUCCESS] Environment folders isolated inside ZeroSpace containers!

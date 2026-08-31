@@ -1,0 +1,27 @@
+[ZEROSPACE] Starting process: B:\ZeroSpace\containers\sandbox_verification_tool_1788153313\venv\Scripts\python.exe B:\ZeroSpace\tools\sandbox_verification_tool_1788153313\src\verify_sandbox.py --test-run
+[ZEROSPACE] Sandboxed USERPROFILE: B:\ZeroSpace\containers\sandbox_verification_tool_1788153313\sandbox\home
+
+==========================================
+      ZEROSPACE SANDBOX TEST UTILITY     
+==========================================
+Current Python Interpreter: B:\ZeroSpace\containers\sandbox_verification_tool_1788153313\venv\Scripts\python.exe
+Current Working Directory: B:\ZeroSpace\tools\sandbox_verification_tool_1788153313\src
+
+--- Package Verification ---
+Successfully imported requests library: 2.34.2
+
+--- Sandbox Environment Redirection Reports ---
+USERPROFILE: B:\ZeroSpace\containers\sandbox_verification_tool_1788153313\sandbox\home
+HOMEPATH: \ZeroSpace\containers\sandbox_verification_tool_1788153313\sandbox\home
+HOMEDRIVE: B:
+APPDATA: B:\ZeroSpace\containers\sandbox_verification_tool_1788153313\sandbox\appdata
+LOCALAPPDATA: B:\ZeroSpace\containers\sandbox_verification_tool_1788153313\sandbox\appdata\Local
+TEMP: B:\ZeroSpace\containers\sandbox_verification_tool_1788153313\sandbox\temp
+TMP: B:\ZeroSpace\containers\sandbox_verification_tool_1788153313\sandbox\temp
+
+--- Restricted System PATH Check ---
+PATH: B:\ZeroSpace\containers\sandbox_verification_tool_1788153313\venv\Scripts;C:/Users/VICTUS/.gemini/antigravity-ide/bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\MinGW\bin;C:\ProgramData\chocolatey\bin;c:\Users\VICTUS\AppData\Local\Programs\cursor\resources\app\bin;B:\MinGW\bin;C:\Users\VICTUS\.cargo\bin;C:\Users\VICTUS\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk-23\bin;D:\Antigravity IDE\bin;B:\Microsoft VS Code\bin;C:\Users\VICTUS\AppData\Local\Programs\Antigravity IDE\bin
+PATH Entry Count: 17
+
+--- Summary ---
+[SUCCESS] Environment folders isolated inside ZeroSpace containers!
