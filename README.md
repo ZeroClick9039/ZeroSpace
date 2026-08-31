@@ -87,6 +87,19 @@ python main.py
 ```
 ZeroSpace will automatically boot the server and open your default browser to `http://127.0.0.1:5000`.
 
+### 3. Run from .exe and deb file
+
+```bash
+# Navigate to /dist directory
+
+# For Windows
+Double click on Zerospace.exe
+
+
+# For Linux
+dpkg -i zerospace.deb
+zerospace
+```
 ---
 
 ## 🖥️ Command Line Interface (CLI)
