@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZEROSPACE // Cybersecurity Tool Manager</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Orbitron:wght@500;700;900&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Cyber Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="cyber-scan-line"></div>
+    
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-glitch" data-text="ZEROSPACE">ZEROSPACE</div>
+                <div class="brand-subtitle">CYBERSECURITY TOOL MANAGER</div>
+            </div>
+            
+            <nav class="nav-menu">
+                <button class="nav-item active" onclick="switchTab('installed-tools')">
+                    <span class="nav-shortcut">[1]</span>
+                    <i class="fa-solid fa-layer-group"></i>
+                    <span>Installed Tools</span>
+                </button>
+                <button class="nav-item" onclick="switchTab('add-tool')">
+                    <span class="nav-shortcut">[2]</span>
+                    <i class="fa-solid fa-circle-plus"></i>
+                    <span>Add Tool</span>
+                </button>
+                <button class="nav-item" onclick="switchTab('containers')">
+                    <span class="nav-shortcut">[3]</span>
+                    <i class="fa-solid fa-box-archive"></i>
+                    <span>Containers</span>
+                </button>
+                <button class="nav-item" onclick="switchTab('logs')">
+                    <span class="nav-shortcut">[4]</span>
+                    <i class="fa-solid fa-terminal"></i>
+                    <span>Global Logs</span>
+                </button>
+                <button class="nav-item" onclick="switchTab('settings')">
+                    <span class="nav-shortcut">[5]</span>
+                    <i class="fa-solid fa-sliders"></i>
+                    <span>Settings</span>
+                </button>
+            </nav>
+            
+            <div class="sidebar-status">
+                <div class="status-indicator-pair">
+                    <span class="pulse-indicator green"></span>
+                    <span class="status-label">SANDBOX LAYER: ACTIVE</span>
+                </div>
+                <div class="system-stats">
+                    <div>DRIVE STATUS: SECURE</div>
+                    <div>LOCAL SERVER: 127.0.0.1:5000</div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="content-header">
+                <h1 id="tab-title">INSTALLED TOOLS</h1>
+                <div class="security-level">SECURITY LEVEL: HIGH</div>
+            </header>
+
+            <!-- Dynamic Views -->
+            <div class="tab-view active" id="installed-tools-view">
+                <div class="search-bar-container">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" id="search-input" placeholder="Filter tools by name, language or status..." oninput="filterTools()">
+                </div>
+                
+                <div class="tools-grid" id="tools-grid">
+                    <!-- Tool Cards injected dynamically -->
+                </div>
+                
+                <div class="empty-state" id="no-tools-message" style="display: none;">
+                    <i class="fa-solid fa-ghost"></i>
+                    <h3>No Tools Installed Yet</h3>
+                    <p>Go to the "Add Tool" tab to download your first security module.</p>
+                    <button class="cyber-btn" onclick="switchTab('add-tool')">ADD FIRST TOOL</button>
+                </div>
+            </div>
+
+            <!-- Add Tool Tab -->
+            <div class="tab-view" id="add-tool-view">
+                <div class="cyber-card form-card">
+                    <div class="card-header-accent">SANDBOX INITIALIZATION</div>
+                    <form id="add-tool-form" onsubmit="handleAddTool(event)">
+                        <div class="form-group">
+                            <label for="tool-name"><i class="fa-solid fa-tag"></i> Tool Name</label>
+                            <input type="text" id="tool-name" placeholder="e.g. Network Port Scanner" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="tool-source"><i class="fa-solid fa-download"></i> Source Link / Path</label>
+                            <div class="input-subtitle">Supports GitHub repositories, direct ZIP URLs, or local directory paths.</div>
+                            <input type="text" id="tool-source" placeholder="e.g. https://github.com/username/repo or B:\path\to\tool" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="tool-desc"><i class="fa-solid fa-align-left"></i> Description (Optional)</label>
+                            <textarea id="tool-desc" rows="3" placeholder="A brief summary of what this cybersecurity tool does. If left empty, ZeroSpace will attempt to parse it from the README.md."></textarea>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group col-6">
+                                <label for="tool-lang"><i class="fa-solid fa-code"></i> Environment Runtime</label>
+                                <select id="tool-lang">
+                                    <option value="auto">Auto Detect (Recommended)</option>
+                                    <option value="python">Python 3 (Isolated venv)</option>
+                                    <option value="c">C/C++ (GCC/Make/CMake)</option>
+                                    <option value="rust">Rust (Cargo)</option>
+                                    <option value="multi">Multi-Language (Python/C/Rust)</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="tool-container-path"><i class="fa-solid fa-box"></i> Custom Container Directory Path (Optional)</label>
+                            <div class="input-subtitle">Override the default directory where this tool's isolated container is stored.</div>
+                            <input type="text" id="tool-container-path" placeholder="e.g. D:\CustomContainers\my-tool-container">
+                        </div>
+                        
+                        <button type="submit" class="cyber-btn primary-btn" id="add-submit-btn">
+                            <i class="fa-solid fa-box-open"></i> CREATE ISOLATED SANDBOX
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Containers Tab -->
+            <div class="tab-view" id="containers-view">
+                <div class="cyber-card">
+                    <div class="card-header-accent">ENVIRONMENT ISOLATION REPORT</div>
+                    <div class="table-container">
+                        <table class="cyber-table">
+                            <thead>
+                                <tr>
+                                    <th>TOOL</th>
+                                    <th>ISOLATION TYPE</th>
+                                    <th>CONTAINER PATH</th>
+                                    <th>SIZE ON DISK</th>
+                                    <th>ENV STATUS</th>
+                                </tr>
+                            </thead>
+                            <tbody id="containers-table-body">
+                                <!-- Injected dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Global Logs Tab -->
+            <div class="tab-view" id="logs-view">
+                <div class="logs-header-bar">
+                    <div class="log-selectors">
+                        <select id="logs-tool-select" onchange="loadGlobalLogs()">
+                            <option value="">-- Select Installed Tool --</option>
+                        </select>
+                        <select id="logs-type-select" onchange="loadGlobalLogs()">
+                            <option value="run">Execution Logs (Stdout/Stderr)</option>
+                            <option value="setup">Environment Setup/Build Logs</option>
+                        </select>
+                    </div>
+                    <button class="cyber-btn secondary-btn" onclick="loadGlobalLogs()"><i class="fa-solid fa-rotate"></i> REFRESH</button>
+                </div>
+                <div class="terminal-container">
+                    <div class="terminal-header">
+                        <div class="terminal-dots">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <div class="terminal-title" id="terminal-log-title">CONSOLE_STREAM: None</div>
+                    </div>
+                    <pre class="terminal-output" id="global-terminal-console">Select a tool above to view sandboxed execution output.</pre>
+                    <!-- CLI Interactive Input -->
+                    <div class="terminal-cli-input-container" id="global-cli-container" style="display: none;">
+                        <span class="cli-prompt">[venv] &gt;</span>
+                        <input type="text" id="global-cli-input" placeholder="Type package installer command (e.g. pip install colorama)..." onkeydown="handleGlobalCliKeydown(event)">
+                        <button class="cyber-btn primary-btn" id="global-cli-btn" onclick="executeGlobalCli()"><i class="fa-solid fa-terminal"></i> RUN</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings Tab -->
+            <div class="tab-view" id="settings-view">
+                <div class="cyber-card">
+                    <div class="card-header-accent">SYSTEM POLICIES</div>
+                    <div class="settings-list">
+                        <div class="settings-item">
+                            <div class="settings-info">
+                                <h3>Clear Environment Cache</h3>
+                                <p>Delete all downloaded files, logs, and databases. This resets ZeroSpace to factory settings.</p>
+                            </div>
+                            <button class="cyber-btn dangerous-btn" onclick="resetDatabase()"><i class="fa-solid fa-triangle-exclamation"></i> RESET DATABASE</button>
+                        </div>
+                        <div class="settings-item">
+                            <div class="settings-info" style="width:100%">
+                                <h3>Paths Configuration</h3>
+                                <p>Configure locations where tools, isolated environments, and logs are stored.</p>
+                                <form id="settings-form" onsubmit="saveSettings(event)" style="margin-top:15px; width:100%; display:flex; flex-direction:column; gap:15px;">
+                                    <div class="form-group" style="display:flex; flex-direction:column; gap:5px;">
+                                        <label for="settings-tools-path" style="font-weight:600;"><i class="fa-solid fa-folder-open"></i> Tools Directory Path</label>
+                                        <input type="text" id="settings-tools-path" required style="width:100%; box-sizing:border-box;">
+                                    </div>
+                                    <div class="form-group" style="display:flex; flex-direction:column; gap:5px;">
+                                        <label for="settings-containers-path" style="font-weight:600;"><i class="fa-solid fa-box"></i> Containers Directory Path</label>
+                                        <input type="text" id="settings-containers-path" required style="width:100%; box-sizing:border-box;">
+                                    </div>
+                                    <div class="form-group" style="display:flex; flex-direction:column; gap:5px;">
+                                        <label for="settings-logs-path" style="font-weight:600;"><i class="fa-solid fa-terminal"></i> Logs Directory Path</label>
+                                        <input type="text" id="settings-logs-path" required style="width:100%; box-sizing:border-box;">
+                                    </div>
+                                    <button type="submit" class="cyber-btn primary-btn" style="align-self:flex-start; margin-top:10px;">
+                                        <i class="fa-solid fa-floppy-disk"></i> SAVE PATHS
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <!-- Sliding Tool Drawer (The Tool Menu replacement) -->
+        <div class="tool-drawer-overlay" id="drawer-overlay" onclick="closeDrawer()"></div>
+        <div class="tool-drawer" id="tool-drawer">
+            <div class="drawer-header">
+                <div class="drawer-header-left">
+                    <span class="pulse-indicator" id="drawer-status-pulse"></span>
+                    <h2 id="drawer-tool-name">Tool Name</h2>
+                </div>
+                <button class="close-drawer-btn" onclick="closeDrawer()"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <div class="drawer-body">
+                <!-- Status & Args -->
+                <div class="drawer-section run-controls">
+                    <div class="drawer-section-title">SANDBOX EXECUTION</div>
+                    
+                    <div class="form-group">
+                        <label for="tool-args"><i class="fa-solid fa-code"></i> Execution Arguments</label>
+                        <input type="text" id="tool-args" placeholder="e.g. -p 80,443 --verbose">
+                    </div>
+                    
+                    <div class="action-buttons-group">
+                        <button class="cyber-btn green-btn" id="btn-run-tool" onclick="executeToolAction('run')">
+                            <i class="fa-solid fa-play"></i> Run Tool
+                        </button>
+                        <button class="cyber-btn dangerous-btn" id="btn-stop-tool" onclick="executeToolAction('stop')">
+                            <i class="fa-solid fa-stop"></i> Stop Tool
+                        </button>
+                        <button class="cyber-btn secondary-btn" id="btn-restart-tool" onclick="executeToolAction('restart')">
+                            <i class="fa-solid fa-rotate-left"></i> Restart
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Info Panel -->
+                <div class="drawer-section info-section">
+                    <div class="drawer-section-title">METADATA INFORMATION</div>
+                    <div class="info-grid">
+                        <div class="info-label">Status:</div>
+                        <div class="info-value text-glow" id="info-status">Stopped</div>
+                        
+                        <div class="info-label">Runtime:</div>
+                        <div class="info-value" id="info-lang">Python 3 (Venv)</div>
+                        
+                        <div class="info-label">Source URL:</div>
+                        <div class="info-value truncate-text" id="info-source" title="">github.com</div>
+                        
+                        <div class="info-label">Container Directory:</div>
+                        <div class="info-value truncate-text" id="info-container" title="">containers/dir</div>
+                        
+                        <div class="info-label">Entrypoint Script:</div>
+                        <div class="info-value" id="info-entry">main.py</div>
+                        
+                        <div class="info-label">Build Config:</div>
+                        <div class="info-value" id="info-dep-file">requirements.txt</div>
+                    </div>
+                </div>
+                
+                <!-- Dependencies Badges -->
+                <div class="drawer-section">
+                    <div class="drawer-section-title">ISOLATED DEPENDENCIES</div>
+                    <div class="dependencies-badges" id="drawer-dependencies-list">
+                        <!-- Badges injected dynamically -->
+                    </div>
+                </div>
+
+                <!-- Logs Box -->
+                <div class="drawer-section console-section">
+                    <div class="drawer-section-header">
+                        <div class="drawer-section-title">SANDBOX LOGS</div>
+                        <div class="log-type-toggle">
+                            <button class="toggle-btn active" id="toggle-run-logs" onclick="setDrawerLogType('run')">Execution</button>
+                            <button class="toggle-btn" id="toggle-setup-logs" onclick="setDrawerLogType('setup')">Build / Setup</button>
+                        </div>
+                    </div>
+                    <div class="drawer-console-container">
+                        <div class="drawer-console">
+                            <pre id="drawer-console-output">Loading sandbox stream...</pre>
+                        </div>
+                        <!-- CLI Interactive Input -->
+                        <div class="terminal-cli-input-container" id="drawer-cli-container" style="display: none;">
+                            <span class="cli-prompt">[venv] &gt;</span>
+                            <input type="text" id="drawer-cli-input" placeholder="Run venv setup/pip command..." onkeydown="handleDrawerCliKeydown(event)">
+                            <button class="cyber-btn primary-btn" id="drawer-cli-btn" onclick="executeDrawerCli()"><i class="fa-solid fa-terminal"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Maintenance Controls -->
+                <div class="drawer-section maintenance-section">
+                    <div class="drawer-section-title">MAINTENANCE POLICIES</div>
+                    <div class="action-buttons-group">
+                        <button class="cyber-btn secondary-btn" onclick="executeToolAction('update')">
+                            <i class="fa-solid fa-cloud-arrow-down"></i> Update Repository
+                        </button>
+                        <button class="cyber-btn dangerous-btn" onclick="executeToolAction('remove')">
+                            <i class="fa-solid fa-trash-can"></i> Remove Tool
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- JavaScript Controller -->
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

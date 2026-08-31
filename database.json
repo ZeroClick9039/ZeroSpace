@@ -1,0 +1,294 @@
+{
+    "tools": {
+        "sandbox_verification_tool_1788151416": {
+            "id": "sandbox_verification_tool_1788151416",
+            "name": "Sandbox Verification Tool",
+            "description": "Verifies folder isolation and environment variables sandboxing in ZeroSpace.",
+            "source": "B:\\ZeroSpace\\mock_tools\\sandbox_verify",
+            "language": "python",
+            "entrypoint": "verify_sandbox.py",
+            "dependencies": [
+                "requests"
+            ],
+            "dependencies_file": "requirements.txt",
+            "container_path": "B:\\ZeroSpace\\containers\\sandbox_verification_tool_1788151416",
+            "src_path": "B:\\ZeroSpace\\tools\\sandbox_verification_tool_1788151416\\src",
+            "status": "Setup Error",
+            "last_args": "",
+            "created_at": "2026-08-31T10:13:36.446550"
+        },
+        "c_mock_tool_1788151761": {
+            "id": "c_mock_tool_1788151761",
+            "name": "C Mock Tool",
+            "description": "Multi-language check tool for C Mock Tool.",
+            "source": "B:\\ZeroSpace\\mock_tools\\c_verify",
+            "language": "c",
+            "entrypoint": "main.exe",
+            "dependencies": [],
+            "dependencies_file": "",
+            "container_path": "B:\\ZeroSpace\\containers\\c_mock_tool_1788151761",
+            "src_path": "B:\\ZeroSpace\\tools\\c_mock_tool_1788151761\\src",
+            "status": "Stopped",
+            "last_args": "",
+            "created_at": "2026-08-31T10:19:21.428201"
+        },
+        "rust_mock_tool_1788151766": {
+            "id": "rust_mock_tool_1788151766",
+            "name": "Rust Mock Tool",
+            "description": "Multi-language check tool for Rust Mock Tool.",
+            "source": "B:\\ZeroSpace\\mock_tools\\rust_verify",
+            "language": "rust",
+            "entrypoint": "rust_verify.exe",
+            "dependencies": [
+                "hex (Rust)"
+            ],
+            "dependencies_file": "Cargo.toml",
+            "container_path": "B:\\ZeroSpace\\containers\\rust_mock_tool_1788151766",
+            "src_path": "B:\\ZeroSpace\\tools\\rust_mock_tool_1788151766\\src",
+            "status": "Stopped",
+            "last_args": "",
+            "created_at": "2026-08-31T10:19:26.578491"
+        },
+        "python_c_multi_language_mock_tool_1788151779": {
+            "id": "python_c_multi_language_mock_tool_1788151779",
+            "name": "Python+C Multi-Language Mock Tool",
+            "description": "Multi-language check tool for Python+C Multi-Language Mock Tool.",
+            "source": "B:\\ZeroSpace\\mock_tools\\multi_verify",
+            "language": "python,c",
+            "entrypoint": "main.py",
+            "dependencies": [
+                "requests"
+            ],
+            "dependencies_file": "requirements.txt, Makefile",
+            "container_path": "B:\\ZeroSpace\\containers\\python_c_multi_language_mock_tool_1788151779",
+            "src_path": "B:\\ZeroSpace\\tools\\python_c_multi_language_mock_tool_1788151779\\src",
+            "status": "Setup Error",
+            "last_args": "",
+            "created_at": "2026-08-31T10:19:39.870261"
+        },
+        "c_mock_tool_1788151809": {
+            "id": "c_mock_tool_1788151809",
+            "name": "C Mock Tool",
+            "description": "Multi-language check tool for C Mock Tool.",
+            "source": "B:\\ZeroSpace\\mock_tools\\c_verify",
+            "language": "c",
+            "entrypoint": "main.exe",
+            "dependencies": [],
+            "dependencies_file": "",
+            "container_path": "B:\\ZeroSpace\\containers\\c_mock_tool_1788151809",
+            "src_path": "B:\\ZeroSpace\\tools\\c_mock_tool_1788151809\\src",
+            "status": "Stopped",
+            "last_args": "",
+            "created_at": "2026-08-31T10:20:09.935251"
+        },
+        "rust_mock_tool_1788151813": {
+            "id": "rust_mock_tool_1788151813",
+            "name": "Rust Mock Tool",
+            "description": "Multi-language check tool for Rust Mock Tool.",
+            "source": "B:\\ZeroSpace\\mock_tools\\rust_verify",
+            "language": "rust",
+            "entrypoint": "rust_verify.exe",
+            "dependencies": [
+                "hex (Rust)"
+            ],
+            "dependencies_file": "Cargo.toml",
+            "container_path": "B:\\ZeroSpace\\containers\\rust_mock_tool_1788151813",
+            "src_path": "B:\\ZeroSpace\\tools\\rust_mock_tool_1788151813\\src",
+            "status": "Stopped",
+            "last_args": "",
+            "created_at": "2026-08-31T10:20:13.081656"
+        },
+        "python_c_multi_language_mock_tool_1788151818": {
+            "id": "python_c_multi_language_mock_tool_1788151818",
+            "name": "Python+C Multi-Language Mock Tool",
+            "description": "Multi-language check tool for Python+C Multi-Language Mock Tool.",
+            "source": "B:\\ZeroSpace\\mock_tools\\multi_verify",
+            "language": "python,c",
+            "entrypoint": "main.py",
+            "dependencies": [
+                "requests"
+            ],
+            "dependencies_file": "requirements.txt, Makefile",
+            "container_path": "B:\\ZeroSpace\\containers\\python_c_multi_language_mock_tool_1788151818",
+            "src_path": "B:\\ZeroSpace\\tools\\python_c_multi_language_mock_tool_1788151818\\src",
+            "status": "Stopped",
+            "last_args": "",
+            "created_at": "2026-08-31T10:20:18.367656"
+        },
+        "sandbox_verification_tool_1788151879": {
+            "id": "sandbox_verification_tool_1788151879",
+            "name": "Sandbox Verification Tool",
+            "description": "Verifies folder isolation and environment variables sandboxing in ZeroSpace.",
+            "source": "B:\\ZeroSpace\\mock_tools\\sandbox_verify",
+            "language": "python",
+            "entrypoint": "verify_sandbox.py",
+            "dependencies": [
+                "requests"
+            ],
+            "dependencies_file": "requirements.txt",
+            "container_path": "B:\\ZeroSpace\\containers\\sandbox_verification_tool_1788151879",
+            "src_path": "B:\\ZeroSpace\\tools\\sandbox_verification_tool_1788151879\\src",
+            "status": "Stopped",
+            "last_args": "--test-run",
+            "created_at": "2026-08-31T10:21:19.925689"
+        },
+        "c_mock_tool_1788153262": {
+            "id": "c_mock_tool_1788153262",
+            "name": "C Mock Tool",
+            "description": "Multi-language check tool for C Mock Tool.",
+            "source": "B:\\ZeroSpace\\mock_tools\\c_verify",
+            "language": "c",
+            "entrypoint": "main.exe",
+            "dependencies": [],
+            "dependencies_file": "",
+            "container_path": "B:\\ZeroSpace\\containers\\c_mock_tool_1788153262",
+            "src_path": "B:\\ZeroSpace\\tools\\c_mock_tool_1788153262\\src",
+            "status": "Stopped",
+            "last_args": "",
+            "created_at": "2026-08-31T10:44:22.071487"
+        },
+        "rust_mock_tool_1788153267": {
+            "id": "rust_mock_tool_1788153267",
+            "name": "Rust Mock Tool",
+            "description": "Multi-language check tool for Rust Mock Tool.",
+            "source": "B:\\ZeroSpace\\mock_tools\\rust_verify",
+            "language": "rust",
+            "entrypoint": "rust_verify.exe",
+            "dependencies": [
+                "hex (Rust)"
+            ],
+            "dependencies_file": "Cargo.toml",
+            "container_path": "B:\\ZeroSpace\\containers\\rust_mock_tool_1788153267",
+            "src_path": "B:\\ZeroSpace\\tools\\rust_mock_tool_1788153267\\src",
+            "status": "Stopped",
+            "last_args": "",
+            "created_at": "2026-08-31T10:44:27.275962"
+        },
+        "python_c_multi_language_mock_tool_1788153278": {
+            "id": "python_c_multi_language_mock_tool_1788153278",
+            "name": "Python+C Multi-Language Mock Tool",
+            "description": "Multi-language check tool for Python+C Multi-Language Mock Tool.",
+            "source": "B:\\ZeroSpace\\mock_tools\\multi_verify",
+            "language": "python,c",
+            "entrypoint": "main.py",
+            "dependencies": [
+                "requests"
+            ],
+            "dependencies_file": "requirements.txt, Makefile",
+            "container_path": "B:\\ZeroSpace\\containers\\python_c_multi_language_mock_tool_1788153278",
+            "src_path": "B:\\ZeroSpace\\tools\\python_c_multi_language_mock_tool_1788153278\\src",
+            "status": "Stopped",
+            "last_args": "",
+            "created_at": "2026-08-31T10:44:38.627430"
+        },
+        "sandbox_verification_tool_1788153313": {
+            "id": "sandbox_verification_tool_1788153313",
+            "name": "Sandbox Verification Tool",
+            "description": "Verifies folder isolation and environment variables sandboxing in ZeroSpace.",
+            "source": "B:\\ZeroSpace\\mock_tools\\sandbox_verify",
+            "language": "python",
+            "entrypoint": "verify_sandbox.py",
+            "dependencies": [
+                "requests"
+            ],
+            "dependencies_file": "requirements.txt",
+            "container_path": "B:\\ZeroSpace\\containers\\sandbox_verification_tool_1788153313",
+            "src_path": "B:\\ZeroSpace\\tools\\sandbox_verification_tool_1788153313\\src",
+            "status": "Stopped",
+            "last_args": "--test-run",
+            "created_at": "2026-08-31T10:45:13.519638"
+        },
+        "sandbox_verification_tool_1788154142": {
+            "id": "sandbox_verification_tool_1788154142",
+            "name": "Sandbox Verification Tool",
+            "description": "Verifies folder isolation and environment variables sandboxing in ZeroSpace.",
+            "source": "D:\\ZeroSpace\\mock_tools\\sandbox_verify",
+            "language": "python",
+            "entrypoint": "verify_sandbox.py",
+            "dependencies": [
+                "requests"
+            ],
+            "dependencies_file": "requirements.txt",
+            "container_path": "D:\\ZeroSpace\\containers\\sandbox_verification_tool_1788154142",
+            "src_path": "D:\\ZeroSpace\\tools\\sandbox_verification_tool_1788154142\\src",
+            "status": "Stopped",
+            "last_args": "--test-run",
+            "created_at": "2026-08-31T10:59:02.181250"
+        },
+        "c_mock_tool_1788154206": {
+            "id": "c_mock_tool_1788154206",
+            "name": "C Mock Tool",
+            "description": "Multi-language check tool for C Mock Tool.",
+            "source": "D:\\ZeroSpace\\mock_tools\\c_verify",
+            "language": "c",
+            "entrypoint": "main.exe",
+            "dependencies": [],
+            "dependencies_file": "",
+            "container_path": "D:\\ZeroSpace\\containers\\c_mock_tool_1788154206",
+            "src_path": "D:\\ZeroSpace\\tools\\c_mock_tool_1788154206\\src",
+            "status": "Stopped",
+            "last_args": "",
+            "created_at": "2026-08-31T11:00:06.800063"
+        },
+        "rust_mock_tool_1788154209": {
+            "id": "rust_mock_tool_1788154209",
+            "name": "Rust Mock Tool",
+            "description": "Multi-language check tool for Rust Mock Tool.",
+            "source": "D:\\ZeroSpace\\mock_tools\\rust_verify",
+            "language": "rust",
+            "entrypoint": "rust_verify.exe",
+            "dependencies": [
+                "hex (Rust)"
+            ],
+            "dependencies_file": "Cargo.toml",
+            "container_path": "D:\\ZeroSpace\\containers\\rust_mock_tool_1788154209",
+            "src_path": "D:\\ZeroSpace\\tools\\rust_mock_tool_1788154209\\src",
+            "status": "Stopped",
+            "last_args": "",
+            "created_at": "2026-08-31T11:00:09.953788"
+        },
+        "python_c_multi_language_mock_tool_1788154217": {
+            "id": "python_c_multi_language_mock_tool_1788154217",
+            "name": "Python+C Multi-Language Mock Tool",
+            "description": "Multi-language check tool for Python+C Multi-Language Mock Tool.",
+            "source": "D:\\ZeroSpace\\mock_tools\\multi_verify",
+            "language": "python,c",
+            "entrypoint": "main.py",
+            "dependencies": [
+                "requests"
+            ],
+            "dependencies_file": "requirements.txt, Makefile",
+            "container_path": "D:\\ZeroSpace\\containers\\python_c_multi_language_mock_tool_1788154217",
+            "src_path": "D:\\ZeroSpace\\tools\\python_c_multi_language_mock_tool_1788154217\\src",
+            "status": "Stopped",
+            "last_args": "",
+            "created_at": "2026-08-31T11:00:17.213116"
+        },
+        "me_1788155184": {
+            "id": "me_1788155184",
+            "name": "ME",
+            "description": "A GUI-based Metadata Extraction Tool built using Python and CustomTkinter that allows users to extract, view, copy, and modify metadata from multiple file formats.",
+            "source": "https://github.com/ZeroClick9039/Metadata-Extractor/archive/refs/heads/main.zip",
+            "language": "python",
+            "entrypoint": "main.py",
+            "dependencies": [
+                "customtkinter",
+                "tkinterdnd2",
+                "python-magic",
+                "piexif",
+                "PyPDF2",
+                "pikepdf",
+                "python-docx",
+                "openpyxl",
+                "python-pptx"
+            ],
+            "dependencies_file": "requirements.txt",
+            "container_path": "D:\\ZeroSpace\\containers\\me_1788155184",
+            "src_path": "D:\\ZeroSpace\\tools\\me_1788155184\\src",
+            "status": "Stopped",
+            "last_args": "",
+            "created_at": "2026-08-31T11:16:25.671823"
+        }
+    },
+    "settings": {}
+}
